@@ -3,8 +3,8 @@ on:
   push:
     branches: [ "main" ]
 env:
-  borgmatic_version: 1.9.13
-  borg_version: 1.4.0
+  borgmatic_version: 1.9.14
+  borg_version: 1.4.1
 permissions:
   checks: write
   contents: write
