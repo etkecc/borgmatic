@@ -3,7 +3,9 @@ on:
   push:
     branches: [ "main" ]
 env:
-  borgmatic_version: 1.9.14
+  # renovate: datasource=pypi depName=borgmatic
+  borgmatic_version: 2.0.9
+  # renovate: datasource=pypi depName=borg
   borg_version: 1.4.1
 permissions:
   checks: write
