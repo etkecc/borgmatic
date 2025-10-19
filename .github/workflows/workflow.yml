@@ -6,7 +6,7 @@ env:
   # renovate: datasource=pypi depName=borgmatic
   borgmatic_version: 2.0.9
   # renovate: datasource=pypi depName=borg
-  borg_version: 1.4.1
+  borg_version: 2012.4.01
 permissions:
   checks: write
   contents: write
