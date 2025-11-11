@@ -16,8 +16,8 @@ it will be closed without further notice.
 
 ## How to check if a Postgres version is available as an Alpine package
 
-Search it on [pkgs.alpinelinux.org](https://pkgs.alpinelinux.org/packages), example for Postgres 18:
-[https://pkgs.alpinelinux.org/packages?name=postgresql18-client&branch=edge](https://pkgs.alpinelinux.org/packages?name=postgresql18-client&branch=edge). If you see `No matching packages found...`, then there is no Alpine package for Postgres 18.
+Search it on [pkgs.alpinelinux.org](https://pkgs.alpinelinux.org/packages), example for Postgres 19:
+[https://pkgs.alpinelinux.org/packages?name=postgresql19-client&branch=edge](https://pkgs.alpinelinux.org/packages?name=postgresql19-client&branch=edge). If you see `No matching packages found...`, then there is no Alpine package for Postgres 19.
 
 # docker image tags
 
