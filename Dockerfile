@@ -7,7 +7,7 @@ ARG BORG_VERSION
 ARG BORGMATIC_VERSION
 
 
-RUN apk add --no-cache libacl || apk add --no-cache acl-libs || echo "Neither libacl, nor acl-libs found!" && \
+RUN apk add --no-cache libacl || apk add --no-cache acl-libs || echo "WARNING: neither libacl, nor acl-libs found!" && \
 		apk add --no-cache lz4-dev zstd-dev xxhash-dev python3 py3-packaging py3-setuptools openssh postgresql${POSTGRES_VERSION}-client socat mysql-client && \
 		apk --no-cache add --virtual builddeps alpine-sdk linux-headers acl-dev py3-cffi py3-pip openssl-dev python3-dev && \
 		ln -s /bin/uname /usr/local/bin/uname && \
@@ -15,8 +15,8 @@ RUN apk add --no-cache libacl || apk add --no-cache acl-libs || echo "Neither li
 		ln -s /bin/sh /usr/local/bin/sh && \
 		pip install --upgrade --break-system-packages pip wheel pkgconfig && \
 		pip install --break-system-packages borgbackup==${BORG_VERSION} borgmatic==${BORGMATIC_VERSION} && \
-		pip cache purge && \
-		apk del builddeps && \
+		pip cache purge || echo "WARNING: cannot purge pip cache" && \
+		apk del builddeps || echo "WARNING: cannot purge build deps" && \
 		rm -rf /var/cache/apk/* && \
 		rm -rf /root/.cache/pip && \
 		find / -name '*.pyc' -exec rm {} \;
