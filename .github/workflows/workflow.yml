@@ -4,7 +4,7 @@ on:
     branches: [ "main" ]
 env:
   # renovate: datasource=pypi depName=borgmatic
-  borgmatic_version: 2.1.0
+  borgmatic_version: 2.1.1
   # renovate: datasource=pypi depName=borgbackup
   borg_version: 1.4.3
 permissions:
